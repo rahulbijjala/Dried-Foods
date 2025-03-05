@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahadev Dried Foods</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fdf6ee;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fde9cc;
+            color: white;
+            padding: 1rem ;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #191919;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li a {
+            color: black;
+        }
+
+        .nav-item {
+            margin-left: 1.5rem;
+
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #FFD700;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #FFD700;
+            color: #8B4513;
+            font-size: 0.8rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url(https://images.squarespace-cdn.com/content/v1/60e85024dc86d643da81c96a/1699380775749-RP66HEIJ1LNGE25YDK0U/How+to+dehydrate+food);
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-top: 80px;
+            color: rgb(221, 93, 104);
+            /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); */
+
+
+
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgb(95, 93, 93);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #8B4513;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .btn:hover {
+            background-color: hsl(32, 98%, 53%);
+
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Search and Filter */
+        .search-filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-select {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 1rem;
+        }
+
+        .prod {
+            margin-left: 44%;
+            margin-bottom: 50px;
+        }
+
+
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #8B4513;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            background-color: #FFD700;
+            color: #8B4513;
+        }
+
+        .add-to-cart:hover {
+            background-color: #e6c200;
+        }
+
+        /* Shopping Cart */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 400px;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .cart-overlay.active {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            background-color: #8B4513;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-title {
+            font-size: 1.3rem;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .cart-item-price {
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            background-color: #eee;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .quantity-value {
+            margin: 0 0.5rem;
+        }
+
+        .remove-item {
+            color: #ff4444;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .cart-footer {
+            padding: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: #8B4513;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-menu {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            .nav-item {
+                margin: 0 0.7rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .cart-overlay {
+                width: 100%;
+            }
+
+            .products-grid {
+                margin-left: 30px;
+
+            }
+
+            #stats {
+                flex-direction: column;
+                /* Stacks elements vertically */
+                align-items: center;
+                margin-left: 11%;
+            }
+
+            .stat-box {
+                width: 200px;
+                margin-left: -100px;
+                background-color: #f4f4f4;
+                /* Wider boxes for smaller screens */
+            }
+
+            .stat-box h2 {
+                color: black;
+            }
+
+        }
+
+        @media screen and (max-width: 1024px) {
+            .stat-box {
+                width: 30%;
+                /* Adjusts size for tablets */
+            }
+        }
+
+
+
+        @media screen and (max-width: 480px) {
+
+            header {
+                width: 100%;
+                margin-left: 15px;
+            }
+            .header-container {
+                margin-left: -1px;
+                
+            }
+
+            .hero {
+                width: 100%;
+                margin-left: 15px;
+            }
+
+            .main-container {
+                height: 100%;
+                width: 100%;
+            }
+
+            .search-filter-container {
+                width: 100%;
+                margin-left: 15px;
+                height: 100%;
+                
+            }
+
+            .search-container {
+                margin-left: -3px;
+            }
+
+            .filter-select {
+                width: 55%;
+            }
+
+            .prod h1 {
+                margin-left: -30px;
+
+            }
+
+            /* .nav-menu {
+               margin-left: 50px;
+            } */
+            .stat-box {
+                width: 100%;
+                font-size: 20px;
+                /* Smaller font for readability */
+                padding: 15px;
+                margin-left: -100px;
+            }
+
+            .stat-box #client-count {
+                color: black;
+
+            }
+
+            .stat-box #supplier-count {
+                color: black;
+            }
+
+            #faq {
+                width: 90%;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+
+            .faq-answer {
+                font-size: 14px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                margin-left: -55px;
+            }
+
+            footer {
+                margin-left: 14px;
+                width: 100%;
+            }
+
+            .quick-links {
+                order: 0;
+                /* Resets order for mobile */
+            }
+            
+
+        }
+
+
+        /* Empty state styles */
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Backdrop */
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .backdrop.active {
+            display: block;
+        }
+
+        /* Stats Section */
+        #stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 40px;
+            background-color: #fdf6ee;
+            flex-wrap: wrap;
+            /* Allows stacking on small screens */
+        }
+
+        .stat-box {
+            background: rgb(254, 179, 67);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 24px;
+            width: 20%;
+            text-align: center;
+            /* Center text for better alignment */
+        }
+
+        .stat-box h2 {
+            margin-left: -2%;
+        }
+
+        .stat-box #client-count {
+            margin-left: 2%;
+        }
+
+        .stat-box #supplier-count {
+            margin-left: 2%;
+        }
+
+
+        /* FAQs Section */
+        /* #faq {
+            padding: 40px;
+            width: 80%;
+            margin-left: 50px;
+        }
+
+        #faq h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            background: rgb(255, 185, 80);
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 35px;
+            display: block;
+            text-align: center;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background: #f4f4f4;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 5px;
+        } */
+
+
+        /* Footer Section */
+        footer {
+            background: #fae5d4;
+            color: white;
+            padding: 30px 10px;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: left;
+            color: black;
+        }
+
+        .about,
+        .quick-links,
+        .contact {
+            flex: 1;
+            /* margin: 40px; */
+            margin-left: 70px;
+            
+        }
+
+        .quick-links {
+            order: -1;
+            /* Moves Quick Links to the left */
+        }
+
+        .footer-content h3 {
+            color: #060606;
+        }
+
+        .footer-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-content ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .contact .social-icons a {
+            text-decoration: none;
+            color: black;
+            margin: 0 5px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid #777;
+            padding-top: 10px;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Mahadev Dried Foods</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <div class="cart-icon" id="cart-icon">
+                        <span>🛒</span>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Premium Quality Dried Foods</h1>
+            <p class="hero-subtitle">Discover our wide range of naturally dried fruits, vegetables, and exotic spices
+                sourced directly from farmers.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Search and Filter -->
+        <div class="search-filter-container">
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Search products...">
+            </div>
+            <div class="filter-container">
+                <select id="category-filter" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="fruits">Dried Fruits</option>
+                    <option value="vegetables">Dried Vegetables</option>
+                    <option value="spices">Spices</option>
+                </select>
+                <select id="price-filter" class="filter-select">
+                    <option value="all">All Prices</option>
+                    <option value="low">Under ₹200</option>
+                    <option value="medium">₹200 - ₹500</option>
+                    <option value="high">Over ₹500</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="prod">
+            <h1>Products</h1>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products" class="products-grid">
+            <!-- Products will be loaded dynamically -->
+        </div>
+    </main>
+
+    <!-- Shopping Cart -->
+    <div class="backdrop" id="backdrop"></div>
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-header">
+            <h2 class="cart-title">Your Shopping Cart</h2>
+            <button class="close-cart" id="close-cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">₹0.00</span>
+            </div>
+            <button class="btn checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Clients & Suppliers Counter Section -->
+    <section id="stats">
+        <div class="stat-box">
+            <h2>Clients</h2>
+            <p id="client-count" data-target="500">0</p>
+        </div>
+        <div class="stat-box">
+            <h2>Suppliers</h2>
+            <p id="supplier-count" data-target="150">0</p>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <!-- <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">What products do you offer? </button>
+            <div class="faq-answer">We offer premium dried fruits, vegetables, and spices sourced from farmers across
+                India.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Do you provide bulk orders? ↓</button>
+            <div class="faq-answer">Yes, we supply bulk orders for businesses and wholesalers.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How can I track my order? ↓</button>
+            <div class="faq-answer">You will receive a tracking link via email after your order is confirmed.</div>
+        </div>
+    </section> -->
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="about">
+                <h3>About Us</h3>
+                <p>Mahadev Dried Foods provides premium quality dried fruits, vegetables, and spices sourced directly
+                    from farmers across India.</p>
+            </div>
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <p>📍 Nizamabad, Telangana, India</p>
+                <p>📞 +91 7989014168</p>
+                <p>✉️ info@mahadevdriedfoods.com</p>
+                <div class="social-icons">
+                    <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a> | <a
+                        href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Mahadev Dried Foods. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Product Data (Simulated Database)
+        const products = [
+            {
+                id: 1,
+                name: "Premium Dried Mango",
+                category: "fruits",
+                price: 299,
+                description: "Naturally sweet and flavorful dried mango slices, perfect for snacking.",
+                image: "http://127.0.0.1:5500/images/mahadevbanana.png"
+            },
+            {
+                id: 2,
+                name: "Organic Cashews",
+                category: "fruits",
+                price: 599,
+                description: "Premium quality organic cashews, roasted to perfection.",
+                image: "http://127.0.0.1:5500/images/mahadevOrganicCashews.jpg"
+            },
+            {
+                id: 3,
+                name: "Mixed Dried Berries",
+                category: "fruits",
+                price: 349,
+                description: "A delicious mix of cranberries, blueberries, and strawberries.",
+                image: "http://127.0.0.1:5500/images/mahadevMixedDriedBerries.jpg"
+            },
+            {
+                id: 4,
+                name: "Sun-Dried Tomatoes",
+                category: "vegetables",
+                price: 249,
+                description: "Intensely flavored sun-dried tomatoes, perfect for pasta and salads.",
+                image: "http://127.0.0.1:5500/images/mahadevSunDriedTomatoes.jpeg"
+            },
+            {
+                id: 5,
+                name: "Dried Shiitake Mushrooms",
+                category: "vegetables",
+                price: 399,
+                description: "Premium dried shiitake mushrooms with rich umami flavor.",
+                image: "http://127.0.0.1:5500/images/mahadevDriedShiitakeMushrooms.jpg"
+            },
+            {
+                id: 6,
+                name: "Dehydrated Mixed Vegetables",
+                category: "vegetables",
+                price: 199,
+                description: "Assorted dehydrated vegetables for soups, stews, and more.",
+                image: "http://127.0.0.1:5500/images/mahadevDehydratedMixedVegetables.jpeg"
+            },
+            {
+                id: 7,
+                name: "Kashmiri Saffron",
+                category: "spices",
+                price: 999,
+                description: "Premium Kashmiri saffron threads with exceptional aroma and flavor.",
+                image: "http://127.0.0.1:5500/images/mahadevKashmiriSaffron.jpg"
+            },
+            {
+                id: 8,
+                name: "Organic Turmeric Powder",
+                category: "spices",
+                price: 199,
+                description: "Pure organic turmeric powder with high curcumin content.",
+                image: "http://127.0.0.1:5500/images/mahadevOrganicTurmericPowder.jpg"
+            },
+            {
+                id: 9,
+                name: "Garam Masala Blend",
+                category: "spices",
+                price: 249,
+                description: "Traditional blend of aromatic spices for authentic Indian cooking.",
+                image: "http://127.0.0.1:5500/images/mahadevGaramMasalaBlend.jpeg"
+            },
+            {
+                id: 10,
+                name: "Dried Apricots",
+                category: "fruits",
+                price: 349,
+                description: "Soft, sweet dried apricots, rich in fiber and nutrients.",
+                image: "http://127.0.0.1:5500/images/mahadevDriedApricots.jpg"
+            },
+            {
+                id: 11,
+                name: "Dried Red Chillies",
+                category: "spices",
+                price: 129,
+                description: "Spicy dried red chillies for adding heat to your dishes.",
+                image: "http://127.0.0.1:5500/images/mahadevDriedRedChillies.jpg"
+            },
+            {
+                id: 12,
+                name: "Dried Okra",
+                category: "vegetables",
+                price: 189,
+                description: "Crispy dried okra, perfect for a healthy snack or side dish.",
+                image: "http://127.0.0.1:5500/images/mahadevDried%20Okra.jpg"
+            }
+        ];
+
+        // Shopping Cart
+        let cart = [];
+
+        // DOM Elements
+        const productsGrid = document.getElementById('products');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.getElementById('cart-count');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const closeCart = document.getElementById('close-cart');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const backdrop = document.getElementById('backdrop');
+        const searchInput = document.getElementById('search-input');
+        const categoryFilter = document.getElementById('category-filter');
+        const priceFilter = document.getElementById('price-filter');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            displayProducts(products);
+
+            // Event Listeners
+            cartIcon.addEventListener('click', openCart);
+            closeCart.addEventListener('click', closeCartOverlay);
+            backdrop.addEventListener('click', closeCartOverlay);
+            searchInput.addEventListener('input', filterProducts);
+            categoryFilter.addEventListener('change', filterProducts);
+            priceFilter.addEventListener('change', filterProducts);
+            checkoutBtn.addEventListener('click', checkout);
+        });
+
+        // Display products
+        function displayProducts(productsArray) {
+            productsGrid.innerHTML = '';
+
+            if (productsArray.length === 0) {
+                productsGrid.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔍</div>
+                        <h2>No products found</h2>
+                        <p>Try changing your search or filter criteria</p>
+                    </div>
+                `;
+                return;
+            }
+
+            productsArray.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <p class="product-category">${product.category}</p>
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-price">₹${product.price.toFixed(2)}</p>
+                        <p class="product-description">${product.description}</p>
+                        <button class="btn add-to-cart" data-id="${product.id}">Add to Cart</button>
+                    </div>
+                `;
+                productsGrid.appendChild(productCard);
+
+                // Add event listener to "Add to Cart" button
+                const addToCartBtn = productCard.querySelector('.add-to-cart');
+                addToCartBtn.addEventListener('click', () => addToCart(product.id));
+            });
+        }
+
+        // Filter products
+        function filterProducts() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const categoryValue = categoryFilter.value;
+            const priceValue = priceFilter.value;
+
+            const filteredProducts = products.filter(product => {
+                // Search filter
+                const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
+                    product.description.toLowerCase().includes(searchTerm);
+
+                // Category filter
+                const matchesCategory = categoryValue === 'all' || product.category === categoryValue;
+
+                // Price filter
+                let matchesPrice = true;
+                if (priceValue === 'low') {
+                    matchesPrice = product.price < 200;
+                } else if (priceValue === 'medium') {
+                    matchesPrice = product.price >= 200 && product.price <= 500;
+                } else if (priceValue === 'high') {
+                    matchesPrice = product.price > 500;
+                }
+
+                return matchesSearch && matchesCategory && matchesPrice;
+            });
+
+            displayProducts(filteredProducts);
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+
+            updateCartUI();
+
+            // Add animation or feedback
+            const notification = document.createElement('div');
+            notification.textContent = `${product.name} added to cart!`;
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = '#8B4513';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '4px';
+            notification.style.zIndex = '1001';
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Update cart UI
+        function updateCartUI() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            // Update cart items
+            cartItems.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🛒</div>
+                        <h3>Your cart is empty</h3>
+                        <p>Start adding some delicious items!</p>
+                    </div>
+                `;
+            } else {
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <h4 class="cart-item-title">${item.name}</h4>
+                            <p class="cart-item-price">₹${item.price.toFixed(2)}</p>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                                <span class="quantity-value">${item.quantity}</span>
+                                <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                            </div>
+                            <button class="remove-item" data-id="${item.id}">Remove</button>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+
+                    // Add event listeners for quantity buttons
+                    const decreaseBtn = cartItem.querySelector('.decrease');
+                    const increaseBtn = cartItem.querySelector('.increase');
+                    const removeBtn = cartItem.querySelector('.remove-item');
+
+                    decreaseBtn.addEventListener('click', () => decreaseQuantity(item.id));
+                    increaseBtn.addEventListener('click', () => increaseQuantity(item.id));
+                    removeBtn.addEventListener('click', () => removeFromCart(item.id));
+                });
+            }
+
+            // Update cart total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `₹${total.toFixed(2)}`;
+        }
+
+        // Open cart
+        function openCart() {
+            cartOverlay.classList.add('active');
+            backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close cart
+        function closeCartOverlay() {
+            cartOverlay.classList.remove('active');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Increase quantity
+        function increaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity++;
+                updateCartUI();
+            }
+        }
+
+        // Decrease quantity
+        function decreaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity--;
+                if (item.quantity === 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty. Add some items before checkout.');
+                return;
+            }
+
+            alert('Proceeding to checkout with ' + cart.length + ' items.');
+            // In a real application, you'd redirect to a checkout page here
+
+            // Clear cart after checkout
+            cart = [];
+            updateCartUI();
+            closeCartOverlay();
+        }
+
+        // Scroll Counter Functionality
+        function animateCounter(counterElement) {
+            const target = parseInt(counterElement.getAttribute('data-target'));
+            let count = 0;
+            const speed = target / 100;
+
+            const updateCount = () => {
+                if (count < target) {
+                    count += speed;
+                    counterElement.textContent = Math.floor(count);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counterElement.textContent = target; // Ensure it reaches exact target
+                }
+            };
+
+            updateCount();
+        }
+
+        // Detect Scroll & Start Counting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                }
+            });
+        }, { threshold: 1.0 });
+
+        document.querySelectorAll("#client-count, #supplier-count").forEach(counter => {
+            observer.observe(counter);
+        });
+
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+    </script>
+</body>
+
+</html>
