@@ -7,6 +7,10 @@
     <title>Mahadev Dried Foods</title>
     <style>
         /* Reset and Base Styles */
+        html{
+            scroll-behavior: smooth;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -405,6 +409,10 @@
             background-color: #d49828;
         }
 
+        .prod h1 {
+            text-align: center;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .header-container {
@@ -466,7 +474,7 @@
         @media screen and (max-width: 480px) {
 
             .nav-link {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
 
             .cart-icon {
@@ -486,16 +494,16 @@
             .hero {
                 width: 100%;
                 /* margin-left: 1.5px; */
-                
+
             }
 
-            
+
             .hero-title {
                 color: #fca502;
                 text-shadow: 0px 0px 0.5px #060606;
             }
 
-           
+
 
             .main-container {
                 height: 100%;
@@ -520,7 +528,7 @@
             }
 
             .prod h1 {
-                margin-left: 80px;
+                margin-left: 100px;
 
             }
 
@@ -690,7 +698,7 @@
             padding: 30px 10px;
             margin-top: 30px;
             width: 1507px;
-            margin-left: -170px;
+            margin-left: 5px;
         }
 
         .footer-content {
@@ -798,7 +806,7 @@
             <a href="#" class="logo">Mahadev Dried Foods</a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="aboutus.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Products</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
                 <li class="nav-item">
@@ -817,7 +825,8 @@
             <h1 class="hero-title">Premium Quality Dried Foods</h1>
             <p class="hero-subtitle">Discover our wide range of naturally dried fruits, vegetables, and exotic spices
                 sourced directly from farmers.</p>
-            <a href="#products" class="btn">Shop Now</a>
+            <a href="#products" class="btn" id="shop-now">Shop Now</a>
+
         </div>
     </section>
 
@@ -843,200 +852,235 @@
                 </select>
             </div>
         </div>
+    </main>
 
+
+    <!-- Products Grid -->
+    <main>
         <div class="prod">
             <h1>Products</h1>
         </div>
 
-        <!-- Products Grid -->
-        <main>
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="images/mahadevbanana.png" alt="Premium Dried Mango">
-                    <h3>Premium Dried Mango</h3>
-                    <p>Naturally sweet and flavorful dried mango slices, perfect for snacking.</p>
-                    <p class="price">₹299</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
 
-                <div class="product-card">
-                    <img src="images/mahadevOrganicCashews.jpg" alt="Organic Cashews">
-                    <h3>Organic Cashews</h3>
-                    <p>Premium quality organic cashews, roasted to perfection.</p>
-                    <p class="price">₹599</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
 
-                <div class="product-card">
-                    <img src="images/mahadevMixedDriedBerries.jpg" alt="Mixed Dried Berries">
-                    <h3>Mixed Dried Berries</h3>
-                    <p>A delicious mix of cranberries, blueberries, and strawberries.</p>
-                    <p class="price">₹349</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/mahadevSunDriedTomatoes.jpeg" alt="Sun-Dried Tomatoes">
-                    <h3>Sun-Dried Tomatoes</h3>
-                    <p>Intensely flavored sun-dried tomatoes, perfect for pasta and salads.</p>
-                    <p class="price">₹249</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/mahadevDriedShiitakeMushrooms.jpg" alt="Dried Shiitake Mushrooms">
-                    <h3>Dried Shiitake Mushrooms</h3>
-                    <p>Premium dried shiitake mushrooms with rich umami flavor.</p>
-                    <p class="price">₹399</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/mahadevDehydratedMixedVegetables.jpeg" alt="Dehydrated Mixed Vegetables">
-                    <h3>Dehydrated Mixed Vegetables</h3>
-                    <p>Assorted dehydrated vegetables for soups, stews, and more.</p>
-                    <p class="price">₹199</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="images/mahadevbanana.png" alt="Premium Dried Mango">
+                <h3>Premium Dried mango</h3>
+                <p>Naturally sweet and flavorful dried mango slices, perfect for snacking.</p>
+                <p class="price">₹299</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
-        </main>
 
-
-
-        <!-- Shopping Cart -->
-        <div class="backdrop" id="backdrop"></div>
-        <div class="cart-overlay" id="cart-overlay">
-            <div class="cart-header">
-                <h2 class="cart-title">Your Shopping Cart</h2>
-                <button class="close-cart" id="close-cart">×</button>
+            <div class="product-card">
+                <img src="images/mahadevOrganicCashews.jpg" alt="Organic Cashews">
+                <h3>Organic Cashews</h3>
+                <p>Premium quality organic cashews, roasted to perfection.</p>
+                <p class="price">₹599</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="cart-items" id="cart-items">
-                <!-- Cart items will be loaded dynamically -->
+
+            <div class="product-card">
+                <img src="images/mahadevMixedDriedBerries.jpg" alt="Mixed Dried Berries">
+                <h3>Mixed Dried Berries</h3>
+                <p>A delicious mix of cranberries, blueberries, and strawberries.</p>
+                <p class="price">₹349</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span id="cart-total">₹0.00</span>
-                </div>
-                <button class="btn checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+
+            <div class="product-card">
+                <img src="images/mahadevSunDriedTomatoes.jpeg" alt="Sun-Dried Tomatoes">
+                <h3>Sun-Dried Tomatoes</h3>
+                <p>Intensely flavored sun-dried tomatoes, perfect for pasta and salads.</p>
+                <p class="price">₹249</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/mahadevDriedShiitakeMushrooms.jpg" alt="Dried Shiitake Mushrooms">
+                <h3>Dried Shiitake Mushrooms</h3>
+                <p>Premium dried shiitake mushrooms with rich umami flavor.</p>
+                <p class="price">₹399</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/mahadevDehydratedMixedVegetables.jpeg" alt="Dehydrated Mixed Vegetables">
+                <h3>Dehydrated Mixed Vegetables</h3>
+                <p>Assorted dehydrated vegetables for soups, stews, and more.</p>
+                <p class="price">₹199</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="vegetables" data-price="medium">
+                <img src="images/mahadevDried Okra.jpg" alt="Dried Okra">
+                <h3>Dried Okra</h3>
+                <p>Crispy dried okra, a healthy and delicious snack.</p>
+                <p class="price">₹350</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="fruits" data-price="medium">
+                <img src="images/mahadevDriedApricots.jpg" alt="Dried Apricots">
+                <h3>Dried Apricots</h3>
+                <p>Soft and chewy dried apricots, rich in nutrients.</p>
+                <p class="price">₹275</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="spices" data-price="low">
+                <img src="images/mahadevDriedRedChillies.jpg" alt="Dried Red Chillies">
+                <h3>Dried Red Chillies</h3>
+                <p>Spicy dried red chillies, perfect for adding heat to your dishes.</p>
+                <p class="price">₹180</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="spices" data-price="medium">
+                <img src="images/mahadevGaramMasalaBlend.jpeg" alt="Garam Masala Blend">
+                <h3>Garam Masala Blend</h3>
+                <p>Aromatic spice blend to enhance your cooking.</p>
+                <p class="price">₹299</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="spices" data-price="high">
+                <img src="images/mahadevKashmiriSaffron.jpg" alt="Kashmiri Saffron">
+                <h3>Kashmiri Saffron</h3>
+                <p>Premium quality saffron from the valleys of Kashmir.</p>
+                <p class="price">₹999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="spices" data-price="medium">
+                <img src="images/mahadevOrganicTurmericPowder.jpg" alt="Organic Turmeric Powder">
+                <h3>Organic Turmeric Powder</h3>
+                <p>Rich and organic turmeric powder for health benefits.</p>
+                <p class="price">₹350</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
         </div>
+    </main>
 
-        <!-- Clients & Suppliers Counter Section -->
-        <section id="stats">
-            <div class="stat-box">
-                <h2>Clients</h2>
-                <p id="client-count" data-target="500">0</p>
-            </div>
-            <div class="stat-box">
-                <h2>Suppliers</h2>
-                <p id="supplier-count" data-target="150">0</p>
-            </div>
-        </section>
 
-        <!-- FAQs Section -->
-        <!-- <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <button class="faq-question">What products do you offer? </button>
-            <div class="faq-answer">We offer premium dried fruits, vegetables, and spices sourced from farmers across
-                India.</div>
+
+    <!-- Shopping Cart -->
+    <div class="backdrop" id="backdrop"></div>
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-header">
+            <h2 class="cart-title">Your Shopping Cart</h2>
+            <button class="close-cart" id="close-cart">×</button>
         </div>
-        <div class="faq-item">
-            <button class="faq-question">Do you provide bulk orders? ↓</button>
-            <div class="faq-answer">Yes, we supply bulk orders for businesses and wholesalers.</div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically -->
         </div>
-        <div class="faq-item">
-            <button class="faq-question">How can I track my order? ↓</button>
-            <div class="faq-answer">You will receive a tracking link via email after your order is confirmed.</div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">₹0.00</span>
+            </div>
+            <button class="btn checkout-btn" id="checkout-btn">Proceed to Checkout</button>
         </div>
-    </section> -->
+    </div>
 
-        <!-- Footer Section -->
-        <footer>
-            <div class="footer-content">
-                <div class="quick-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="about">
-                    <h3>About Us</h3>
-                    <p>Mahadev Dried Foods provides premium quality dried fruits, vegetables, and spices sourced
-                        directly
-                        from farmers across India.</p>
-                </div>
-                <div class="contact">
-                    <h3>Contact Us</h3>
-                    <p>📍 Nizamabad, Telangana, India</p>
-                    <p>📞 +91 7989014168</p>
-                    <p>✉️ info@mahadevdriedfoods.com</p>
-                    <div class="social-icons">
-                        <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a> | <a
-                            href="#">WhatsApp</a>
-                    </div>
+    <!-- Clients & Suppliers Counter Section -->
+    <section id="stats">
+        <div class="stat-box">
+            <h2>Clients</h2>
+            <p id="client-count" data-target="500">0</p>
+        </div>
+        <div class="stat-box">
+            <h2>Suppliers</h2>
+            <p id="supplier-count" data-target="150">0</p>
+        </div>
+    </section>
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="about">
+                <h3>About Us</h3>
+                <p>Mahadev Dried Foods provides premium quality dried fruits, vegetables, and spices sourced
+                    directly
+                    from farmers across India.</p>
+            </div>
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <p>📍 Nizamabad, Telangana, India</p>
+                <p>📞 +91 7989014168</p>
+                <p>✉️ info@mahadevdriedfoods.com</p>
+                <div class="social-icons">
+                    <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a> | <a
+                        href="#">WhatsApp</a>
                 </div>
             </div>
-            <p class="footer-bottom">&copy; 2025 Mahadev Dried Foods. All rights reserved.</p>
-        </footer>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Mahadev Dried Foods. All rights reserved.</p>
+    </footer>
 
-        <script>
+    <script>
 
-            // Shopping Cart
-            let cart = [];
 
-            // DOM Elements
-            const productsGrid = document.getElementById('products');
-            const cartIcon = document.getElementById('cart-icon');
-            const cartCount = document.getElementById('cart-count');
-            const cartOverlay = document.getElementById('cart-overlay');
-            const closeCart = document.getElementById('close-cart');
-            const cartItems = document.getElementById('cart-items');
-            const cartTotal = document.getElementById('cart-total');
-            const checkoutBtn = document.getElementById('checkout-btn');
-            const backdrop = document.getElementById('backdrop');
-            const searchInput = document.getElementById('search-input');
-            const categoryFilter = document.getElementById('category-filter');
-            const priceFilter = document.getElementById('price-filter');
 
-            // Initialize
-            document.addEventListener('DOMContentLoaded', () => {
-                displayProducts(products);
 
-                // Event Listeners
-                cartIcon.addEventListener('click', openCart);
-                closeCart.addEventListener('click', closeCartOverlay);
-                backdrop.addEventListener('click', closeCartOverlay);
-                searchInput.addEventListener('input', filterProducts);
-                categoryFilter.addEventListener('change', filterProducts);
-                priceFilter.addEventListener('change', filterProducts);
-                checkoutBtn.addEventListener('click', checkout);
-            });
+        // DOM Elements
+        const productsGrid = document.getElementById('products');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.getElementById('cart-count');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const closeCart = document.getElementById('close-cart');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const backdrop = document.getElementById('backdrop');
+        const searchInput = document.getElementById('search-input');
+        const categoryFilter = document.getElementById('category-filter');
+        const priceFilter = document.getElementById('price-filter');
 
-            // Display products
-            function displayProducts(productsArray) {
-                productsGrid.innerHTML = '';
 
-                if (productsArray.length === 0) {
-                    productsGrid.innerHTML = `
+        document.addEventListener('DOMContentLoaded', () => {
+            displayProducts(products);
+
+            cartIcon.addEventListener('click', openCart);
+            closeCart.addEventListener('click', closeCartOverlay);
+            backdrop.addEventListener('click', closeCartOverlay);
+            searchInput.addEventListener('input', filterProducts);
+            categoryFilter.addEventListener('change', filterProducts);
+            priceFilter.addEventListener('change', filterProducts);
+            checkoutBtn.addEventListener('click', checkout);
+        });
+
+        // Display products
+        function displayProducts(productsArray) {
+            productsGrid.innerHTML = '';
+
+            if (productsArray.length === 0) {
+                productsGrid.innerHTML = `
                     <div class="empty-state">
                         <div class="empty-state-icon">🔍</div>
                         <h2>No products found</h2>
                         <p>Try changing your search or filter criteria</p>
                     </div>
                 `;
-                    return;
-                }
+                return;
+            }
 
-                productsArray.forEach(product => {
-                    const productCard = document.createElement('div');
-                    productCard.className = 'product-card';
-                    productCard.innerHTML = `
+            productsArray.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
                     <img src="${product.image}" alt="${product.name}" class="product-image">
                     <div class="product-info">
                         <p class="product-category">${product.category}</p>
@@ -1046,102 +1090,120 @@
                         <button class="btn add-to-cart" data-id="${product.id}">Add to Cart</button>
                     </div>
                 `;
-                    productsGrid.appendChild(productCard);
+                productsGrid.appendChild(productCard);
+                const addToCartBtn = productCard.querySelector('.add-to-cart');
+                addToCartBtn.addEventListener('click', () => addToCart(product.id));
+            });
+        }
 
-                    // Add event listener to "Add to Cart" button
-                    const addToCartBtn = productCard.querySelector('.add-to-cart');
-                    addToCartBtn.addEventListener('click', () => addToCart(product.id));
-                });
-            }
+        // Filter products
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("search-input");
+            const categoryFilter = document.getElementById("category-filter");
+            const priceFilter = document.getElementById("price-filter");
+            const productCards = document.querySelectorAll(".product-card");
 
-            // Filter products
             function filterProducts() {
-                const searchTerm = searchInput.value.toLowerCase();
-                const categoryValue = categoryFilter.value;
-                const priceValue = priceFilter.value;
+                const searchText = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+                const selectedPrice = priceFilter.value;
 
-                const filteredProducts = products.filter(product => {
-                    // Search filter
-                    const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
-                        product.description.toLowerCase().includes(searchTerm);
+                productCards.forEach(card => {
+                    const productName = card.querySelector("h3").textContent.toLowerCase();
+                    const productCategory = card.getAttribute("data-category");
+                    const productPrice = card.getAttribute("data-price");
 
-                    // Category filter
-                    const matchesCategory = categoryValue === 'all' || product.category === categoryValue;
+                    let isVisible = true;
 
-                    // Price filter
-                    let matchesPrice = true;
-                    if (priceValue === 'low') {
-                        matchesPrice = product.price < 200;
-                    } else if (priceValue === 'medium') {
-                        matchesPrice = product.price >= 200 && product.price <= 500;
-                    } else if (priceValue === 'high') {
-                        matchesPrice = product.price > 500;
+                    // Search filtering
+                    if (!productName.includes(searchText)) {
+                        isVisible = false;
                     }
 
-                    return matchesSearch && matchesCategory && matchesPrice;
+                    // Category filtering
+                    if (selectedCategory !== "all" && productCategory !== selectedCategory) {
+                        isVisible = false;
+                    }
+
+                    // Price filtering
+                    if (selectedPrice !== "all") {
+                        if (
+                            (selectedPrice === "low" && productPrice !== "low") ||
+                            (selectedPrice === "medium" && productPrice !== "medium") ||
+                            (selectedPrice === "high" && productPrice !== "high")
+                        ) {
+                            isVisible = false;
+                        }
+                    }
+
+                    card.style.display = isVisible ? "block" : "none";
                 });
-
-                displayProducts(filteredProducts);
             }
 
-            // Add to Cart
-            function addToCart(productId) {
-                const product = products.find(p => p.id === productId);
+            searchInput.addEventListener("input", filterProducts);
+            categoryFilter.addEventListener("change", filterProducts);
+            priceFilter.addEventListener("change", filterProducts);
+        });
 
-                // Check if product already in cart
-                const existingItem = cart.find(item => item.id === productId);
 
-                if (existingItem) {
-                    existingItem.quantity++;
-                } else {
-                    cart.push({
-                        ...product,
-                        quantity: 1
-                    });
-                }
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
 
-                updateCartUI();
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === productId);
 
-                // Add animation or feedback
-                const notification = document.createElement('div');
-                notification.textContent = `${product.name} added to cart!`;
-                notification.style.position = 'fixed';
-                notification.style.bottom = '20px';
-                notification.style.right = '20px';
-                notification.style.backgroundColor = '#8B4513';
-                notification.style.color = 'white';
-                notification.style.padding = '10px 20px';
-                notification.style.borderRadius = '4px';
-                notification.style.zIndex = '1001';
-                document.body.appendChild(notification);
-
-                setTimeout(() => {
-                    notification.remove();
-                }, 3000);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
             }
 
-            // Update cart UI
-            function updateCartUI() {
-                // Update cart count
-                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-                cartCount.textContent = totalItems;
+            updateCartUI();
 
-                // Update cart items
-                cartItems.innerHTML = '';
+            // Add animation or feedback
+            const notification = document.createElement('div');
+            notification.textContent = `${product.name} added to cart!`;
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = '#8B4513';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '4px';
+            notification.style.zIndex = '1001';
+            document.body.appendChild(notification);
 
-                if (cart.length === 0) {
-                    cartItems.innerHTML = `
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Update cart UI
+        function updateCartUI() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            // Update cart items
+            cartItems.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
                     <div class="empty-state">
                         <div class="empty-state-icon">🛒</div>
                         <h3>Your cart is empty</h3>
                         <p>Start adding some delicious items!</p>
                     </div>
                 `;
-                } else {
-                    cart.forEach(item => {
-                        const cartItem = document.createElement('div');
-                        cartItem.className = 'cart-item';
-                        cartItem.innerHTML = `
+            } else {
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
                         <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                         <div class="cart-item-details">
                             <h4 class="cart-item-title">${item.name}</h4>
@@ -1154,123 +1216,129 @@
                             <button class="remove-item" data-id="${item.id}">Remove</button>
                         </div>
                     `;
-                        cartItems.appendChild(cartItem);
+                    cartItems.appendChild(cartItem);
 
-                        // Add event listeners for quantity buttons
-                        const decreaseBtn = cartItem.querySelector('.decrease');
-                        const increaseBtn = cartItem.querySelector('.increase');
-                        const removeBtn = cartItem.querySelector('.remove-item');
+                    // Add event listeners for quantity buttons
+                    const decreaseBtn = cartItem.querySelector('.decrease');
+                    const increaseBtn = cartItem.querySelector('.increase');
+                    const removeBtn = cartItem.querySelector('.remove-item');
 
-                        decreaseBtn.addEventListener('click', () => decreaseQuantity(item.id));
-                        increaseBtn.addEventListener('click', () => increaseQuantity(item.id));
-                        removeBtn.addEventListener('click', () => removeFromCart(item.id));
-                    });
-                }
-
-                // Update cart total
-                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-                cartTotal.textContent = `₹${total.toFixed(2)}`;
+                    decreaseBtn.addEventListener('click', () => decreaseQuantity(item.id));
+                    increaseBtn.addEventListener('click', () => increaseQuantity(item.id));
+                    removeBtn.addEventListener('click', () => removeFromCart(item.id));
+                });
             }
 
-            // Open cart
-            function openCart() {
-                cartOverlay.classList.add('active');
-                backdrop.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+            // Update cart total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `₹${total.toFixed(2)}`;
+        }
 
-            // Close cart
-            function closeCartOverlay() {
-                cartOverlay.classList.remove('active');
-                backdrop.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+        // Open cart
+        function openCart() {
+            cartOverlay.classList.add('active');
+            backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-            // Increase quantity
-            function increaseQuantity(productId) {
-                const item = cart.find(item => item.id === productId);
-                if (item) {
-                    item.quantity++;
+        // Close cart
+        function closeCartOverlay() {
+            cartOverlay.classList.remove('active');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Increase quantity
+        function increaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity++;
+                updateCartUI();
+            }
+        }
+
+        // Decrease quantity
+        function decreaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity--;
+                if (item.quantity === 0) {
+                    removeFromCart(productId);
+                } else {
                     updateCartUI();
                 }
             }
+        }
 
-            // Decrease quantity
-            function decreaseQuantity(productId) {
-                const item = cart.find(item => item.id === productId);
-                if (item) {
-                    item.quantity--;
-                    if (item.quantity === 0) {
-                        removeFromCart(productId);
-                    } else {
-                        updateCartUI();
-                    }
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty. Add some items before checkout.');
+                return;
+            }
+
+            alert('Proceeding to checkout with ' + cart.length + ' items.');
+            // In a real application, you'd redirect to a checkout page here
+
+            // Clear cart after checkout
+            cart = [];
+            updateCartUI();
+            closeCartOverlay();
+        }
+
+        // Scroll Counter Functionality
+        function animateCounter(counterElement) {
+            const target = parseInt(counterElement.getAttribute('data-target'));
+            let count = 0;
+            const speed = target / 100;
+
+            const updateCount = () => {
+                if (count < target) {
+                    count += speed;
+                    counterElement.textContent = Math.floor(count);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counterElement.textContent = target; // Ensure it reaches exact target
                 }
-            }
+            };
 
-            // Remove from cart
-            function removeFromCart(productId) {
-                cart = cart.filter(item => item.id !== productId);
-                updateCartUI();
-            }
+            updateCount();
+        }
 
-            // Checkout
-            function checkout() {
-                if (cart.length === 0) {
-                    alert('Your cart is empty. Add some items before checkout.');
-                    return;
+        // Detect Scroll & Start Counting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
                 }
-
-                alert('Proceeding to checkout with ' + cart.length + ' items.');
-                // In a real application, you'd redirect to a checkout page here
-
-                // Clear cart after checkout
-                cart = [];
-                updateCartUI();
-                closeCartOverlay();
-            }
-
-            // Scroll Counter Functionality
-            function animateCounter(counterElement) {
-                const target = parseInt(counterElement.getAttribute('data-target'));
-                let count = 0;
-                const speed = target / 100;
-
-                const updateCount = () => {
-                    if (count < target) {
-                        count += speed;
-                        counterElement.textContent = Math.floor(count);
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        counterElement.textContent = target; // Ensure it reaches exact target
-                    }
-                };
-
-                updateCount();
-            }
-
-            // Detect Scroll & Start Counting
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                    }
-                });
-            }, { threshold: 1.0 });
-
-            document.querySelectorAll("#client-count, #supplier-count").forEach(counter => {
-                observer.observe(counter);
             });
+        }, { threshold: 1.0 });
 
-            // FAQ Toggle Functionality
-            document.querySelectorAll('.faq-question').forEach(button => {
-                button.addEventListener('click', () => {
-                    const answer = button.nextElementSibling;
-                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-                });
+        document.querySelectorAll("#client-count, #supplier-count").forEach(counter => {
+            observer.observe(counter);
+        });
+
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });
+        });
 
-        </script>
+        
+
+
+
+
+    </script>
+
 </body>
 
 </html>
